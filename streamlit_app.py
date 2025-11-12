@@ -35,7 +35,5 @@ if user_input:
         st.write(response.outputs[0].content)
     elif isinstance(response.outputs[0], ToolExecutionEntry):
         #html_output = message_output_entry_to_md(response)
-        try:
-            st.write(message_output_entry_to_md(response.outputs[1].content))
-        except:
-            st.write("No response from the agent.")
+        st.write(message_output_entry_to_md(response.outputs[1].content))
+
