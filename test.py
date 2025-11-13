@@ -2,7 +2,7 @@ from mistralai import Mistral
 api_key = "DIiJ24tz6bS9ddYHBjRcCMc2kFwV17cs"
 client = Mistral(api_key=api_key)
 library_agent = client.beta.agents.create(
-    model="mistral-medium",
+    model="mistral-medium-latest",
     name="Dazzler AI agent",
     description="Agent used to access documents from the Dazzler library.",
     instructions="Answer questions about properties and usage of Dazzler (AOPDF, Acousto-optic programmable dispersive filter). Exclude all results related to Comic books or weapons. Use https://amplitude-laser.com/products/femtosecond-lasers/instrumentation-lasers-femtosecondes/dazzler/ for additional information.",

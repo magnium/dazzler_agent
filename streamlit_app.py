@@ -22,7 +22,7 @@ def message_output_entry_to_md(entry) -> str:
 
 client = Mistral(api_key="DIiJ24tz6bS9ddYHBjRcCMc2kFwV17cs")
 model = "mistral-tiny"
-agent = "ag_019a791e38bd722a97c8d2f6222204aa"#"ag_019a783390427144bca557571b4c11e8"
+agent = "ag_019a7d3d270770948f3bcb2e4a6f4a01"#"ag_019a783390427144bca557571b4c11e8"
 st.title("Dazzler AI Agent")
 user_input = st.text_input("Ask me anything about Dazzler:")
 if user_input:
