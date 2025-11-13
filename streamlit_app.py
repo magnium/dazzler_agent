@@ -7,7 +7,7 @@ def message_output_entry_to_md(entry) -> str:
     for chunk in entry:
         if chunk.type == "text":
             md_parts.append(chunk.text.strip())
-        elif chunk.type == "tool_reference":
+        elif chunk.type in "tool_reference":
             title = chunk.title.removesuffix(".pdf")
             if not title in refs:
                 idx = len(refs)
@@ -33,7 +33,12 @@ if user_input:
 
     if isinstance(response.outputs[0], MessageOutputEntry):
         st.write(response.outputs[0].content)
+    elif len(response.outputs) > 1 and isinstance(response.outputs[1], MessageOutputEntry):
+        st.write(response.outputs[1].content)
     elif isinstance(response.outputs[0], ToolExecutionEntry):
         #html_output = message_output_entry_to_md(response)
-        st.write(message_output_entry_to_md(response.outputs[1].content))
+        try:
+            st.write(message_output_entry_to_md(response.outputs[1].content))
+        except:
+            st.write(response)
 
